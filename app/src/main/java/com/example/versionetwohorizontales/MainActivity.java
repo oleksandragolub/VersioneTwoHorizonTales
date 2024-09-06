@@ -19,6 +19,6 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        Log.d(TAG, "onCreate(): ");
+        Log.d(TAG, "onCreate(): prova");
     }
 }
