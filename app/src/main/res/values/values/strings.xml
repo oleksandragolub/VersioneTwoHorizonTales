@@ -1,0 +1,217 @@
+<resources>
+    <string name="app_name" translatable="false">Horizon Tales</string>
+    <string name="open_nav" translatable="false">Open Navigation Drawer</string>
+    <string name="close_nav" translatable="false">Close Navigation Drawer</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_preferiti">Favorites</string>
+    <string name="title_ricerca">Search</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="logout">Logout</string>
+
+    <string name="title_activity_register" translatable="false">RegisterActivity</string>
+    <string name="title_activity_login" translatable="false">LoginActivity</string>
+    <string name="title_activity_home_page" translatable="false">HomePageActivity</string>
+    <string name="title_activity_forgot_password" translatable="false">ForgotPasswordActivity</string>
+
+    <string name="txt_login">Login</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="text_forgot_pw">Forgot password?</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_login_google">Login with Google</string>
+    <string name="txt_or">OR</string>
+    <string name="txt_domanda">Don\'t have an account?</string>
+    <string name="button_registrati">Sign Up!</string>
+
+    <string name="txt_registrazione">Sign Up</string>
+    <string name="btn_register">Sign Up</string>
+    <string name="btn_registrazione_google">Sign Up with Google</string>
+    <string name="txt_domanda_registrazione">Do you have an account?</string>
+    <string name="button_allora_entra">Then login!</string>
+
+    <string name="txt_forgot_pw">Forgot Password</string>
+    <string name="txt_domanda_forgot_pw">Which e-mail address did you sign up with?</string>
+    <string name="btn_ripristina_password">Reset Password</string>
+    <string name="txt_ripristina_password">We will send instructions on how to reset your password to this address.</string>
+    <string name="txt_domanda_back">Not interested in this?</string>
+    <string name="txt_back">Go back!</string>
+
+
+    <string name="web_client_id" translatable="false">116867753475-rmcirl3u8ncj8sc99d76hbfrrcm0b5kl.apps.googleusercontent.com</string>
+    <string name="loading">Loading</string>
+    <string name="txt_inserisci_dati">Enter your details:</string>
+    <string name="username">Username</string>
+    <string name="DoB">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_fem">Female</string>
+    <string name="gender_other">Other</string>
+    <string name="conferma_password">Confirm password</string>
+
+    <string name="txt_change_pw">Change your password</string>
+    <string name="txt_change_email">Change your email</string>
+    <string name="txt_elimina_profile">Delete your profile:</string>
+    <string name="txt_upload_profile_pic">Enter your profile picture</string>
+    <string name="txt_scegli_immagine">Choose the image</string>
+    <string name="txt_carica_immagine">Load the image</string>
+    <string name="txt_update_profile">Update your profile details:</string>
+    <string name="btn_update_profile">Update your profile</string>
+    <string name="btn_salva_update_profile">Save your up-to-date data</string>
+    <string name="descrizione">Description</string>
+    <string name="txt_update_email">Update your profile email:</string>
+    <string name="txt_update_password">Update your profile password:</string>
+    <string name="email_corrente">Current email</string>
+    <string name="btn_authenticate">Authenticate</string>
+    <string name="txt_profile_not_authenticated">Your profile has not yet been authenticated!</string>
+    <string name="email_nuovo">New Email</string>
+    <string name="btn_email_nuovo">Update your email</string>
+    <string name="btn_password_nuova">Update your password</string>
+    <string name="password_corrente">Current password</string>
+    <string name="password_nuova">New Password</string>
+    <string name="conferma_password_nuova">Confirm new password</string>
+    <string name="txt_domanda_elimina_profile">Do you wish to delete your profile?</string>
+    <string name="btn_delete_user">Delete your profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="txt_profile_domanda_veramente_elimini">Do you want to delete this account? This action is irreversible!</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_searchUser">Search User</string>
+    <string name="txt_search_user">Search user</string>
+    <string name="txt_chat">Chat</string>
+    <string name="cerca_utente">Search user</string>
+    <string name="cerca_la_lista_degli_utenti_con_un_cerco_username">Search for the list of users with a given username</string>
+    <string name="btn_chat_profile">Text this user</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="title_new_chat">"New Chat "</string>
+    <string name="txt_new_chat">New Chat\n</string>
+    <string name="txt_tutti_chats">Chats\n</string>
+    <string name="title_chats">Chats\n</string>
+    <string name="scrivi_un_messaggio">Type your message…</string>
+    <string name="title_category">Categories</string>
+    <string name="aggiungi_categoria">+ Add Category</string>
+    <string name="txt_add_new_category">Add new category</string>
+    <string name="category_title">Category Title</string>
+    <string name="submit_btn">Add</string>
+    <string name="submit_btn_2">Save</string>
+    <string name="category_title_2">"Category Title "</string>
+    <string name="category_title_3">Category Title</string>
+    <string name="txt_search_catalogo">Search for a category</string>
+    <string name="txt_search_category">Search for a category</string>
+    <string name="txt_add_new_comics">Add new comics</string>
+    <string name="comics_title">Comics Title</string>
+    <string name="comics_description">Comics Description</string>
+    <string name="comics_category">Comics Category</string>
+    <string name="title_comics">Comics Title</string>
+    <string name="description_comics">Comics Description</string>
+    <string name="size_comics" translatable="false">13 MB</string>
+    <string name="date_comics" translatable="false">dd/mm/yyyy</string>
+    <string name="category_comics">Category</string>
+    <string name="comixes">Comics</string>
+    <string name="Categoria" translatable="false" />
+    <string name="categoria_text">Category\n</string>
+    <string name="cerca_text">Search</string>
+    <string name="txt_edit_comics">Edit the data of a comic book</string>
+    <string name="update_btn_2">Update</string>
+    <string name="comics_detail">Details</string>
+    <string name="titolo_del_comics">Comics title</string>
+    <string name="categoria_text2">Category</string>
+    <string name="na" translatable="false">N/A</string>
+    <string name="date_text2">Date</string>
+    <string name="size_text2">Dimension</string>
+    <string name="views_text2">Views</string>
+    <string name="downloads_text2">Downloads</string>
+    <string name="descrizione_comics">Comics Description</string>
+    <string name="txt_comics">Read Comics</string>
+    <string name="txt1" translatable="false">N/N</string>
+    <string name="downloads_text3">Downloaded</string>
+    <string name="pages_text3">Pages</string>
+    <string name="preferiti">Favorites</string>
+    <string name="preferiti2">Add to favorites</string>
+    <string name="preferiti3">Add</string>
+    <string name="count" translatable="false">N/A</string>
+    <string name="txt_search_personaggio">Search characters</string>
+    <string name="name_character">Character name</string>
+    <string name="descripzione_personaggio">Character description</string>
+
+    <string name="add_comment">Add a comment</string>
+    <string name="txt_comment">Comment</string>
+    <string name="btn_comment">Add</string>
+    <string name="label_comments">Comments</string>
+
+
+    <string name="superhero">Character</string>
+    <string name="cerca_personaggio">Search Character</string>
+    <string name="imagesuperhero">Image of Superhero</string>
+    <string name="empty">The search field is empty.</string>
+    <string name="close">Close</string>
+    <string name="no_exist">Character does not exist.</string>
+    <string name="no_description_available">Description not available</string>
+
+    <string name="network_error" translatable="false">Network error occurred. Please check your connection.</string>
+    <string name="service_error" translatable="false">Service error occurred. Please try again later.</string>
+    <string name="image_download_error" translatable="false">Failed to download image.</string>
+    <string name="comics">Comics</string>
+    <string name="cerca_fumetto">Search comics</string>
+    <string name="metadata_comics">Comics Metadata</string>
+    <string name="Lingua_text2">Language</string>
+    <string name="anno_text2">Year</string>
+    <string name="downloads_text4">Downloaded</string>
+    <string name="collezioni_text2">Collection</string>
+    <string name="generi_text2">Genres</string>
+    <string name="txt_domanda3">Would you like to see more comics?</string>
+    <string name="button_risp_comics">Click here!</string>
+    <string name="select_collection">Select Collection</string>
+    <string name="select_language">Select Language</string>
+    <string name="select_year">Select Year</string>
+    <string name="select_genre">Select Genre</string>
+    <string name="filtri">Apply filters</string>
+    <string name="no_more_comics">There are no more comics</string>
+    <string name="comics_lingua">Comics language</string>
+    <string name="comics_category_collezione">Comics Category/Collection</string>
+    <string name="comics_subject">Comics Genre</string>
+    <string name="comics_anno">Comics Year</string>
+    <string name="gestione_category">Comics category</string>
+    <string name="gestione_category2">Comics by Category/Collection</string>
+    <string name="gestione_category3">Category/Collection</string>
+    <string name="search_character">Search Character</string>
+
+
+    <string name="toast_delete">Removed successfully...</string>
+    <string name="toast_del">Removing...</string>
+    <string name="toast_user_detail">Failed to load user details: </string>
+    <string name="toast_comics_unfound">No comics found with selected parameters</string>
+    <string name="toast_search_error">Error searching</string>
+    <string name="toast_search_cancelled">Search cancelled</string>
+    <string name="toast_search_timeout">The research took too long. Please try again later.</string>
+    <string name="toast_param">Select at least a search paramater</string>
+    <string name="toast_unknow">Unknow data tipe</string>
+    <string name="toast_null">Argument is null</string>
+    <string name="toast_url">Comics url not avaiable. Please try again later.</string>
+    <string name="toast_url_invalid">Comcis url not valid. Please try again later</string>
+    <string name="toast_auth">You are not authenticated.</string>
+    <string name="toast_comment">enter your comment...</string>
+    <string name="toast_comment_added">Comment added...</string>
+    <string name="toast_comment_failed">Failed to add comment due to </string>
+    <string name="toast_download_failed">Failed to download PDF </string>
+    <string name="toast_favourite">Added to favourites...</string>
+    <string name="toast_failed_favourite">Failed to add favourites...</string>
+    <string name="toast_removed_favourite">Removed from favourites...</string>
+    <string name="toast_failed_remove_favourite">Failed to remove favourites...</string>
+    <string name="toast_error_page">Error on page</string>
+    <string name="toast_category">Failed to load categories: </string>
+    <string name="toast_collection">Failed to load collection from API</string>
+    <string name="toast_retry">Retry failed: </string>
+    <string name="toast_insert_category">Insert title of the new category...</string>
+    <string name="toast_inserted_category">The category added successfully!</string>
+    <string name="toast_insert_title">Insert title...</string>
+    <string name="toast_insert_descriprion">Insert descripton...</string>
+    <string name="toast_select_year">Select year...</string>
+    <string name="toast_select_language">Select language...</string>
+    <string name="toast_select_collection">Select at least a collection...</string>
+    <string name="toast_select_genre">Select at least a genre...</string>
+    <string name="toast_select_pdf">Select PDF...</string>
+    <string name="toast_pdfupload_failed">Failed to download PDF due to </string>
+
+</resources>
