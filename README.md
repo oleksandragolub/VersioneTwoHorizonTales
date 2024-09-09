@@ -8,6 +8,8 @@ Taha Mounji - 780471
 
 CODICE IN FASE DI GLOBALE CAMBIAMENTO (implementazione di MVVM Clean Architecture) -> verra' ulteriormente aggiornato fino a 16 settembre!!!!
 
+Basato sul vecchio progetto: https://github.com/oleksandragolub/progetto-dispositivi-mobili
+
 IN SINTESI:
 
 registrazione password/login e via google 
