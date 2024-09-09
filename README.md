@@ -6,7 +6,7 @@ Oleksandra Golub - 856706
 Alessandro redaelli - 869841
 Taha Mounji - 780471
 
-
+CODICE IN FASE DI GLOBALE CAMBIAMENTO (implementazione di MVVM Clean Architecture) -> verra' ulteriormente aggiornato fino a 16 settembre
 
 IN SINTESI:
 
