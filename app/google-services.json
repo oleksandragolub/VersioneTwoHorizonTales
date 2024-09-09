@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "943794729356",
+    "firebase_url": "https://versionetwohorizontales-default-rtdb.firebaseio.com",
+    "project_id": "versionetwohorizontales",
+    "storage_bucket": "versionetwohorizontales.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943794729356:android:d7079986c1e835941c66a9",
+        "android_client_info": {
+          "package_name": "com.example.versionetwohorizontales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943794729356-bh101vb8svvm8m3g90fj4aq32md7d405.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.versionetwohorizontales",
+            "certificate_hash": "b046ec65bb79af20491a6cbdff41ac9442f0380d"
+          }
+        },
+        {
+          "client_id": "943794729356-0q254gqfcms0113len6k2nqncc0k8q75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSSoGtyeZf9QxiogMbbfeQlgv3ilit7hY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943794729356-0q254gqfcms0113len6k2nqncc0k8q75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
