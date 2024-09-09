@@ -116,13 +116,13 @@ public class MainActivityWithNavigationDrawer extends AppCompatActivity {
                 // Effettua il logout da Firebase Auth
                 FirebaseAuth.getInstance().signOut();
                 // Effettua il logout da Google Sign-In
-                signOutFromGoogle();
+              //  signOutFromGoogle();
                 // Passa alla LoginActivity
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+              /*  Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();
-                return true;
+                return true;*/
             }
         }
 
