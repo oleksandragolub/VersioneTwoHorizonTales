@@ -22,8 +22,8 @@
         android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_mainActivity"
-            app:destination="@id/mainActivity" />
+            android:id="@+id/action_loginFragment_to_mainActivityWithBottomNavigationView"
+            app:destination="@id/mainActivityWithBottomNavigationView" />
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
@@ -57,6 +57,16 @@
     <!-- Main Activity -->
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.versionetwohorizontales.ui.pr.MainActivity"
+        android:name="com.example.versionetwohorizontales.ui.main.MainActivity"
         android:label="Main Activity" />
+    <activity
+        android:id="@+id/mainActivityWithBottomNavigationView"
+        android:name="com.example.versionetwohorizontales.ui.main.MainActivityWithBottomNavigationView"
+        android:label="activity_main_with_bottom_navigation_view"
+        tools:layout="@layout/activity_main_with_bottom_navigation_view" >
+    </activity>
+    <activity
+        android:id="@+id/mainActivityWithNavigationDrawer"
+        android:name="com.example.versionetwohorizontales.ui.main.MainActivityWithNavigationDrawer"
+        android:label="MainActivityWithNavigationDrawer" />
 </navigation>

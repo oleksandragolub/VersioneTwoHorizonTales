@@ -15,9 +15,11 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_app_piccola"
+        android:logo="@mipmap/logo_app_piccola"
+        android:roundIcon="@mipmap/logo_app_piccola"
+        android:banner="@mipmap/logo_app_piccola"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProgettoDispositiviMobili"
         android:requestLegacyExternalStorage="true"
@@ -27,7 +29,10 @@
 
         <activity
             android:name=".ui.welcome.fragment.WelcomeActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ProgettoDispositiviMobili">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -35,8 +40,25 @@
         </activity>
 
         <activity
-            android:name=".ui.pr.MainActivity"
-            android:exported="false"/>
+            android:name=".ui.main.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ProgettoDispositiviMobili"/>
+        <activity
+            android:name=".ui.main.MainActivityWithBottomNavigationView"
+            android:label="MainActivityWithBottomNavigationView"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ProgettoDispositiviMobili"/>
+        <activity
+            android:name=".ui.main.MainActivityWithNavigationDrawer"
+            android:label="MainActivityWithNavigationDrawer"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ProgettoDispositiviMobili"/>
     </application>
 
 </manifest>

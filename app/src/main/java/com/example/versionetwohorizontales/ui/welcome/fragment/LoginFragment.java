@@ -21,11 +21,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+
+import com.example.versionetwohorizontales.data.repository.user.IUserRepository;
+import com.example.versionetwohorizontales.data.repository.user.UserRepository;
 import com.example.versionetwohorizontales.model.Result;
 import com.example.versionetwohorizontales.R;
 import com.example.versionetwohorizontales.databinding.FragmentLoginBinding;
 import com.example.versionetwohorizontales.ui.welcome.viewmodel.GoogleSignInViewModel;
 import com.example.versionetwohorizontales.ui.welcome.viewmodel.LoginViewModel;
+import com.example.versionetwohorizontales.ui.welcome.viewmodel.LoginViewModelFactory;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -45,9 +49,16 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
-        loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
-        googleSignInViewModel = new ViewModelProvider(this).get(GoogleSignInViewModel.class);
 
+        // Crea l'istanza di IUserRepository
+        IUserRepository userRepository = new UserRepository();
+
+        // Usa il ViewModelFactory per creare il LoginViewModel
+        LoginViewModelFactory factory = new LoginViewModelFactory(userRepository);
+        loginViewModel = new ViewModelProvider(this, factory).get(LoginViewModel.class);
+
+        // Inizializza GoogleSignInViewModel
+        googleSignInViewModel = new ViewModelProvider(this).get(GoogleSignInViewModel.class);
 
         // Aggiungi TextWatcher per monitorare il cambiamento dei campi email e password
         binding.email.addTextChangedListener(textWatcher);
@@ -67,7 +78,7 @@ public class LoginFragment extends Fragment {
 
         // Bottone per il login tramite Google
         binding.btnLoginGoogle.setOnClickListener(v -> {
-            Log.d("GoogleSignIn", "Bottone Google Login cliccato");  // Log qui
+            Log.d("GoogleSignIn", "Bottone Google Login cliccato");
             Intent signInIntent = getGoogleSignInClient().getSignInIntent();
             googleSignInLauncher.launch(signInIntent);
         });
@@ -106,14 +117,12 @@ public class LoginFragment extends Fragment {
         return true;
     }
 
-
-
     // Funzione per osservare il risultato del login
     private void observeLoginResult() {
         loginViewModel.getUserLiveData().observe(getViewLifecycleOwner(), result -> {
             if (result instanceof Result.Success) {
                 Toast.makeText(getActivity(), "Login riuscito", Toast.LENGTH_SHORT).show();
-                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_loginFragment_to_mainActivity);
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_loginFragment_to_mainActivityWithBottomNavigationView);
             } else if (result instanceof Result.Error) {
                 String errorMessage = ((Result.Error<?>) result).getError().getMessage();
                 if (errorMessage.contains("Email non verificata")) {
@@ -130,12 +139,11 @@ public class LoginFragment extends Fragment {
         googleSignInViewModel.getGoogleUserLiveData().observe(getViewLifecycleOwner(), result -> {
             if (result instanceof Result.Success) {
                 Toast.makeText(requireContext(), "Login Google riuscito", Toast.LENGTH_SHORT).show();
-                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_loginFragment_to_mainActivity);
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_loginFragment_to_mainActivityWithBottomNavigationView);
             } else if (result instanceof Result.Error) {
                 Exception error = ((Result.Error<?>) result).getError();
                 String errorMessage = "Errore Google Sign-In: " + error.getMessage();
 
-                // Mostra messaggio più dettagliato in base al tipo di errore
                 if (error instanceof ApiException) {
                     ApiException apiException = (ApiException) error;
                     errorMessage += " [Codice errore: " + apiException.getStatusCode() + "]";
@@ -162,7 +170,7 @@ public class LoginFragment extends Fragment {
     private void setupGoogleSignInLauncher() {
         googleSignInLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
             if (result.getResultCode() == RESULT_OK) {
-                Log.d("GoogleSignIn", "Google Sign-In RESULT_OK ricevuto");  // Aggiungi log
+                Log.d("GoogleSignIn", "Google Sign-In RESULT_OK ricevuto");
                 Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
                 handleGoogleSignInTask(task);
             } else {
@@ -177,22 +185,21 @@ public class LoginFragment extends Fragment {
         try {
             GoogleSignInAccount account = task.getResult(ApiException.class);
             Log.d("GoogleSignIn", "Account Google ricevuto: " + account.getEmail());
-            Log.d("GoogleSignIn", "ID Token: " + account.getIdToken());  // Aggiungi questo log
+            Log.d("GoogleSignIn", "ID Token: " + account.getIdToken());
             googleSignInViewModel.signInWithGoogle(account.getIdToken());
         } catch (ApiException e) {
             int statusCode = e.getStatusCode();
             Log.e("GoogleSignIn", "Errore di Google Sign-In: " + statusCode + " - " + GoogleSignInStatusCodes.getStatusCodeString(statusCode));
-            Toast.makeText(requireContext(), "Google Sign-In fallito. Codice errore: " + statusCode, Toast.LENGTH_LONG).show();  // Aggiungi questo per vedere l'errore
+            Toast.makeText(requireContext(), "Google Sign-In fallito. Codice errore: " + statusCode, Toast.LENGTH_LONG).show();
 
-            // Codice 0 indica spesso un annullamento, quindi gestiamo questo caso esplicitamente
             if (statusCode == GoogleSignInStatusCodes.SIGN_IN_CANCELLED) {
                 Log.e("GoogleSignIn", "Login annullato dall'utente.");
             } else {
                 Log.e("GoogleSignIn", "Codice errore: " + statusCode);
             }
-            Toast.makeText(requireContext(), "Google Sign-In fallito. Codice: " + statusCode, Toast.LENGTH_LONG).show();
         }
     }
+
 
     // TextWatcher per abilitare/disabilitare il pulsante login
     private final TextWatcher textWatcher = new TextWatcher() {
@@ -215,5 +222,4 @@ public class LoginFragment extends Fragment {
 
         return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches() && !TextUtils.isEmpty(password) && password.length() >= 6;
     }
-
 }

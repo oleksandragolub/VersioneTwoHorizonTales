@@ -15,13 +15,13 @@ public class LoginViewModel extends ViewModel {
     private final MutableLiveData<Result<User>> userLiveData = new MutableLiveData<>();
     private final IUserRepository userRepository;
 
-    public LoginViewModel(IUserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
    /* public LoginViewModel() {
         userRepository = new UserRepository();
     }*/
+
+    public LoginViewModel(IUserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public LiveData<Result<User>> getUserLiveData() {
         return userLiveData;
@@ -34,10 +34,8 @@ public class LoginViewModel extends ViewModel {
             } else {
                 String errorMessage = ((Result.Error<?>) result).getError().getMessage();
                 if (errorMessage != null && errorMessage.contains("Email not verified")) {
-                    // Se l'email non è verificata
                     userLiveData.setValue(new Result.Error<>(new Exception("Email non verificata. Controlla la tua casella di posta per il link di verifica.")));
                 } else {
-                    // Altri errori
                     userLiveData.setValue(new Result.Error<>(new Exception("Login failed")));
                 }
             }
