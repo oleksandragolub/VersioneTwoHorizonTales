@@ -213,4 +213,7 @@
     <string name="toast_select_genre">Select at least a genre...</string>
     <string name="toast_select_pdf">Select PDF...</string>
     <string name="toast_pdfupload_failed">Failed to download PDF due to </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

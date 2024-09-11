@@ -16,9 +16,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") } // Aggiungi qui il repository JitPack
     }
 }
 
 rootProject.name = "VersioneTwoHorizonTales"
 include(":app")
- 

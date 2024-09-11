@@ -1,12 +1,11 @@
 [versions]
-agp = "8.5.1"
-androidxJunit = "1.1.5"
+agp = "8.5.2"
+androidxJunit = "1.2.1"
 commonsIo = "2.15.0"
 commonsValidator = "1.9.0"
 converterGson = "2.11.0"
-espressoCoreVersion = "3.5.1"
+espressoCoreVersion = "3.6.1"
 firebaseBom = "33.2.0"
-firebaseBomVersion = "32.7.0"
 glide = "4.16.0"
 gson = "2.11.0"
 junit = "4.13.2"
@@ -14,19 +13,20 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.8.0"
+activity = "1.9.2"
 constraintlayout = "2.1.4"
 googleServices = "4.4.2"
 firebaseCrashlytics = "3.0.2"
 firebaseAnalytics = "21.2.0"
 firebaseCrashlyticsLib = "18.2.12"
-navVersion = "2.7.6"
+navVersion = "2.8.0"
 playServicesAuth = "21.2.0"
 playServicesBase = "18.5.0"
 playServicesLocation = "21.3.0"
 roomCompiler = "2.6.1"
 roomRuntime = "2.6.1"
 securityCrypto = "1.1.0-alpha06"
+androidPdfViewer = "3.1.0"
 
 [libraries]
 commons-io = { module = "commons-io:commons-io", version.ref = "commonsIo" }
@@ -36,7 +36,6 @@ espresso-core-v351 = { module = "androidx.test.espresso:espresso-core", version.
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-auth = { module = "com.google.firebase:firebase-auth" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
-firebase-bom-v3270 = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBomVersion" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
 firebase-database = { module = "com.google.firebase:firebase-database" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
@@ -59,7 +58,7 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "converte
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
-
+android-pdf-viewer = { module = "com.github.barteksc:android-pdf-viewer", version.ref = "androidPdfViewer" }
 
 
 [plugins]

@@ -15,24 +15,35 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+
+import com.example.versionetwohorizontales.data.repository.user.IUserRepository;
+import com.example.versionetwohorizontales.data.repository.user.UserRepository;
+import com.example.versionetwohorizontales.data.source.user.UserRemoteDataSource;
 import com.example.versionetwohorizontales.model.Result;
 import com.example.versionetwohorizontales.R;
 import com.example.versionetwohorizontales.databinding.FragmentRegistrationBinding;
 import com.example.versionetwohorizontales.ui.welcome.viewmodel.RegistrationViewModel;
+import com.example.versionetwohorizontales.ui.welcome.viewmodelfactory.RegistrationViewModelFactory;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
 
 public class RegistrationFragment extends Fragment {
     private FragmentRegistrationBinding binding;
+    private IUserRepository userRepository;
     private RegistrationViewModel registrationViewModel;
+    private RegistrationViewModelFactory factory;
     private DatePickerDialog datePicker;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentRegistrationBinding.inflate(inflater, container, false);
-        registrationViewModel = new ViewModelProvider(this).get(RegistrationViewModel.class);
+
+        // Crea UserRepository con UserRemoteDataSource e passalo a RegistrationViewModelFactory
+        userRepository = new UserRepository(new UserRemoteDataSource(requireContext()));
+        factory = new RegistrationViewModelFactory(userRepository);
+        registrationViewModel = new ViewModelProvider(this, factory).get(RegistrationViewModel.class);
 
         binding.username.addTextChangedListener(textWatcher);
         binding.email.addTextChangedListener(textWatcher);

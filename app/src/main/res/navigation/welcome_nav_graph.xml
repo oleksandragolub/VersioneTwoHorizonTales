@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/welcome_navigation_component"
-    app:startDestination="@id/splashFragment">  <!-- Cambia qui il login fragment con splash -->
+    app:startDestination="@id/splashFragment">
 
     <!-- Splash Fragment -->
     <fragment
@@ -21,9 +21,6 @@
         android:name="com.example.versionetwohorizontales.ui.welcome.fragment.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/action_loginFragment_to_mainActivityWithBottomNavigationView"
-            app:destination="@id/mainActivityWithBottomNavigationView" />
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
@@ -54,19 +51,4 @@
             app:destination="@id/loginFragment" />
     </fragment>
 
-    <!-- Main Activity -->
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.versionetwohorizontales.ui.main.MainActivity"
-        android:label="Main Activity" />
-    <activity
-        android:id="@+id/mainActivityWithBottomNavigationView"
-        android:name="com.example.versionetwohorizontales.ui.main.MainActivityWithBottomNavigationView"
-        android:label="activity_main_with_bottom_navigation_view"
-        tools:layout="@layout/activity_main_with_bottom_navigation_view" >
-    </activity>
-    <activity
-        android:id="@+id/mainActivityWithNavigationDrawer"
-        android:name="com.example.versionetwohorizontales.ui.main.MainActivityWithNavigationDrawer"
-        android:label="MainActivityWithNavigationDrawer" />
 </navigation>

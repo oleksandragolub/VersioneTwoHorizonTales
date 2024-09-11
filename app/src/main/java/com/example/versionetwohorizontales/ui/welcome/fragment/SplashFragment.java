@@ -25,7 +25,7 @@ public class SplashFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_splash, container, false);
 
         // Randomize bookmark image in the splash fragment
-        ImageView bookmarkImage = view.findViewById(R.id.imageView_bookmark);  // Qui utilizza view.findViewById()
+        ImageView bookmarkImage = view.findViewById(R.id.imageView_bookmark);
 
         int[] images = {R.drawable.bookmark_batman, R.drawable.bookmark_ironman,
                 R.drawable.bookmark_joker, R.drawable.bookmark_spiderman, R.drawable.bookmark_superman};
@@ -33,10 +33,14 @@ public class SplashFragment extends Fragment {
         Random rand = new Random();
         bookmarkImage.setBackgroundResource(images[rand.nextInt(images.length)]);
 
-        // Esegui la navigazione al LoginFragment dopo un ritardo
-        new Handler().postDelayed(() -> {
-            Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_loginFragment);
-        }, 2000);  // Imposta 2 secondi di ritardo
+        // Use Handler to delay navigation and check if the fragment is still attached
+        Handler handler = new Handler();
+        Runnable runnable = () -> {
+            if (isAdded() && requireActivity() != null) {  // Check if fragment is still attached
+                Navigation.findNavController(requireView()).navigate(R.id.action_splashFragment_to_loginFragment);
+            }
+        };
+        handler.postDelayed(runnable, 2000);
 
         return view;
     }

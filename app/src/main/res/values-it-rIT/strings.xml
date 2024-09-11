@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Horizon Tales</string>
+    <string name="logout">Logout</string>
     <string name="title_home">Home</string>
     <string name="title_preferiti">Preferiti</string>
     <string name="title_ricerca">Ricerca</string>
@@ -181,5 +183,6 @@
     <string name="toast_select_pdf">Seleziona il pdf...</string>
     <string name="toast_pdfupload_failed">Impossibile caricare il PDF a cause di </string>
 
-
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

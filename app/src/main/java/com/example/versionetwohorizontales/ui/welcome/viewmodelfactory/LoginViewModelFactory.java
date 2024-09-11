@@ -1,10 +1,11 @@
-package com.example.versionetwohorizontales.ui.welcome.viewmodel;
+package com.example.versionetwohorizontales.ui.welcome.viewmodelfactory;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.versionetwohorizontales.data.repository.user.IUserRepository;
+import com.example.versionetwohorizontales.ui.welcome.viewmodel.LoginViewModel;
 
 public class LoginViewModelFactory implements ViewModelProvider.Factory {
 

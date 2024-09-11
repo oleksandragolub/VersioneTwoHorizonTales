@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.firebase.crashlytics)
 }
 
+
 android {
     namespace = "com.example.versionetwohorizontales"
     compileSdk = 34
@@ -39,7 +40,7 @@ android {
 
 dependencies {
     // Firebase Bill of Materials (BOM)
-    implementation(platform(libs.firebase.bom.v3270))
+    implementation(platform(libs.firebase.bom))
 
     // Firebase libraries
     implementation(libs.firebase.analytics)
@@ -68,6 +69,7 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.room.runtime)
     implementation(libs.glide)
+
 
     // Firebase BoM (Bill of Materials)
     implementation(libs.google.firebase.database)

@@ -40,21 +40,7 @@
         </activity>
 
         <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="false"
-            android:windowSoftInputMode="stateVisible|adjustResize"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.ProgettoDispositiviMobili"/>
-        <activity
-            android:name=".ui.main.MainActivityWithBottomNavigationView"
-            android:label="MainActivityWithBottomNavigationView"
-            android:exported="false"
-            android:windowSoftInputMode="stateVisible|adjustResize"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.ProgettoDispositiviMobili"/>
-        <activity
-            android:name=".ui.main.MainActivityWithNavigationDrawer"
-            android:label="MainActivityWithNavigationDrawer"
+            android:name=".ui.main.fragment.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="stateVisible|adjustResize"
             android:screenOrientation="portrait"

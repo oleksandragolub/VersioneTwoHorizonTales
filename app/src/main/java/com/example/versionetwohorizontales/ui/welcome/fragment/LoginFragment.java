@@ -24,12 +24,15 @@ import androidx.navigation.Navigation;
 
 import com.example.versionetwohorizontales.data.repository.user.IUserRepository;
 import com.example.versionetwohorizontales.data.repository.user.UserRepository;
+import com.example.versionetwohorizontales.data.source.user.UserRemoteDataSource;
 import com.example.versionetwohorizontales.model.Result;
 import com.example.versionetwohorizontales.R;
 import com.example.versionetwohorizontales.databinding.FragmentLoginBinding;
+import com.example.versionetwohorizontales.ui.main.fragment.MainActivity;
 import com.example.versionetwohorizontales.ui.welcome.viewmodel.GoogleSignInViewModel;
+import com.example.versionetwohorizontales.ui.welcome.viewmodelfactory.GoogleSignInViewModelFactory;
 import com.example.versionetwohorizontales.ui.welcome.viewmodel.LoginViewModel;
-import com.example.versionetwohorizontales.ui.welcome.viewmodel.LoginViewModelFactory;
+import com.example.versionetwohorizontales.ui.welcome.viewmodelfactory.LoginViewModelFactory;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -43,6 +46,7 @@ public class LoginFragment extends Fragment {
     private FragmentLoginBinding binding;
     private LoginViewModel loginViewModel;
     private GoogleSignInViewModel googleSignInViewModel;
+    private GoogleSignInViewModelFactory googleFactory;
     private ActivityResultLauncher<Intent> googleSignInLauncher;
 
     @Nullable
@@ -50,15 +54,17 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
 
-        // Crea l'istanza di IUserRepository
-        IUserRepository userRepository = new UserRepository();
+        // Crea UserRemoteDataSource con il context e passalo a UserRepository
+        UserRemoteDataSource userRemoteDataSource = new UserRemoteDataSource(requireContext());
+        IUserRepository userRepository = new UserRepository(userRemoteDataSource);
 
         // Usa il ViewModelFactory per creare il LoginViewModel
         LoginViewModelFactory factory = new LoginViewModelFactory(userRepository);
         loginViewModel = new ViewModelProvider(this, factory).get(LoginViewModel.class);
 
-        // Inizializza GoogleSignInViewModel
-        googleSignInViewModel = new ViewModelProvider(this).get(GoogleSignInViewModel.class);
+        // Use GoogleSignInViewModelFactory to pass context to GoogleSignInViewModel
+        googleFactory = new GoogleSignInViewModelFactory(requireContext());
+        googleSignInViewModel = new ViewModelProvider(this, googleFactory).get(GoogleSignInViewModel.class);
 
         // Aggiungi TextWatcher per monitorare il cambiamento dei campi email e password
         binding.email.addTextChangedListener(textWatcher);
@@ -122,7 +128,12 @@ public class LoginFragment extends Fragment {
         loginViewModel.getUserLiveData().observe(getViewLifecycleOwner(), result -> {
             if (result instanceof Result.Success) {
                 Toast.makeText(getActivity(), "Login riuscito", Toast.LENGTH_SHORT).show();
-                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_loginFragment_to_mainActivityWithBottomNavigationView);
+
+                // Lancia MainActivity
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // Pulisce la back stack
+                startActivity(intent);
+
             } else if (result instanceof Result.Error) {
                 String errorMessage = ((Result.Error<?>) result).getError().getMessage();
                 if (errorMessage.contains("Email non verificata")) {
@@ -139,7 +150,12 @@ public class LoginFragment extends Fragment {
         googleSignInViewModel.getGoogleUserLiveData().observe(getViewLifecycleOwner(), result -> {
             if (result instanceof Result.Success) {
                 Toast.makeText(requireContext(), "Login Google riuscito", Toast.LENGTH_SHORT).show();
-                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_loginFragment_to_mainActivityWithBottomNavigationView);
+
+                // Lancia MainActivity
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // Pulisce la back stack
+                startActivity(intent);
+
             } else if (result instanceof Result.Error) {
                 Exception error = ((Result.Error<?>) result).getError();
                 String errorMessage = "Errore Google Sign-In: " + error.getMessage();

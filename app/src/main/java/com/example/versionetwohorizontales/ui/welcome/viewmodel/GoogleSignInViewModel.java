@@ -1,5 +1,6 @@
 package com.example.versionetwohorizontales.ui.welcome.viewmodel;
 
+import android.content.Context;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
@@ -15,8 +16,8 @@ public class GoogleSignInViewModel extends ViewModel {
     private final UserRepository userRepository;
     private final MutableLiveData<Result<User>> googleUserLiveData = new MutableLiveData<>();
 
-    public GoogleSignInViewModel() {
-        userRepository = new UserRepository();
+    public GoogleSignInViewModel(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public LiveData<Result<User>> getGoogleUserLiveData() {
